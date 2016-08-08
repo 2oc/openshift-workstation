@@ -1,7 +1,7 @@
 FROM fedora:24
 
 RUN ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime && \
-dnf -y install wget tar curl tmux fish zsh mtr htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch cmake python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel fish man-db man && \
+dnf -y install wget tar curl iptools tmux fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch cmake python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man && \
 dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install && \
 dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
@@ -22,7 +22,6 @@ dnf install -y perl-Locale-Maketext-Simple perl-Locale-Maketext perl-Params-Chec
 /usr/local/bin/cpanm Time::Stamp && \
 cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
 cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
-#rpm -qa | grep -- "-devel" | xargs rpm -e --nodeps && \
 dnf clean all
 
 ENTRYPOINT ["/bin/bash"]
