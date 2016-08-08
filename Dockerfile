@@ -22,6 +22,7 @@ dnf install -y perl-Locale-Maketext-Simple perl-Locale-Maketext perl-Params-Chec
 /usr/local/bin/cpanm Time::Stamp && \
 cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
 cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
+ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 dnf clean all
 
 ENTRYPOINT ["/bin/bash"]
