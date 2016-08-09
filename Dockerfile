@@ -26,6 +26,7 @@ ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 dnf -y install dnf-plugins-core && \
 dnf -y copr enable dperson/neovim && \
 dnf -y install neovim && \
+pip3 install --upgrade neovim && \
 dnf clean all
 
 ENTRYPOINT ["/bin/bash"]
