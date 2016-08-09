@@ -1,7 +1,7 @@
 FROM fedora:24
 
 RUN ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime && \
-dnf -y install sl wget xz tar curl iputils nmap nmap-ncat tmux fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man && \
+dnf -y install telnet sl wget xz tar curl iputils nmap nmap-ncat tmux fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man && \
 dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install && \
 dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
@@ -23,6 +23,9 @@ dnf install -y perl-Locale-Maketext-Simple perl-Locale-Maketext perl-Params-Chec
 cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
 cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
 ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
+dnf -y install dnf-plugins-core && \
+dnf -y copr enable dperson/neovim && \
+dnf -y install neovim && \
 dnf clean all
 
 ENTRYPOINT ["/bin/bash"]
