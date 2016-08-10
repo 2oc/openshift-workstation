@@ -9,7 +9,9 @@ pip install --upgrade pip && \
 python3 -m pip install --upgrade pip && \
 pip install butterfly && \
 pip install libsass && \
-pip install wssh && \
+python3 -m pip install gevent && \
+python3 -m pip install wssh && \
+python3 -m pip install flask && \
 python3 -m pip install gitsome && \
 python3 -m pip install Pillow && \
 pip install wakatime && \
