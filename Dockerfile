@@ -1,7 +1,7 @@
 FROM fedora:24
 
 RUN ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime && \
-dnf -y install wget tar curl iputils nmap nmap-ncat tmux fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch cmake python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man && \
+dnf -y install wget tar curl iputils mosh nmap nmap-ncat tmux fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch cmake python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man && \
 dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install && \
 dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
