@@ -9,13 +9,9 @@ pip install --upgrade pip && \
 python3 -m pip install --upgrade pip && \
 pip install butterfly && \
 pip install libsass && \
-python3 -m pip install gevent && \
-python3 -m pip install gevent-websocket && \
-python3 -m pip install paramiko && \
-python3 -m pip install flask && \
-python3 -m pip install wssh && \
+dnf -y install python-paramiko python-gevent python-gevent-websocket python-gevent-socketio python-six python-flask python-setuptools_git python-websocket-client python3-pillow python3-pillow-devel && \
+pip install wssh && \
 python3 -m pip install gitsome && \
-python3 -m pip install Pillow && \
 pip install wakatime && \
 pip install jsbeautifier && \
 cpanm Convert::Base32 && \
