@@ -24,6 +24,8 @@ cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v 
 cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
 ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 pip3 install --upgrade neovim && \
-dnf clean all
+dnf clean all && \
+rm -fr /var/log/dnf* && \
+rm -fr /tmp
 
 ENTRYPOINT ["/bin/bash"]
