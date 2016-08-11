@@ -26,6 +26,6 @@ ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 pip3 install --upgrade neovim && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
-rm -fr /tmp
+rm -fr /tmp/* && rm -fr /tmp/.??*
 
 ENTRYPOINT ["/bin/bash"]
