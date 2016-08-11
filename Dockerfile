@@ -10,7 +10,7 @@ python3 -m pip install --upgrade pip && \
 pip install butterfly && \
 pip install libsass && \
 dnf -y install python-paramiko python-gevent python-gevent-websocket python-gevent-socketio python-six python-flask python-setuptools_git python-websocket-client python3-pillow python3-pillow-devel && \
-pip install wssh && \
+pip2.7 install wssh && \
 python3 -m pip install gitsome && \
 pip install wakatime && \
 pip install jsbeautifier && \
