@@ -26,7 +26,7 @@ ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 pip3 install --upgrade neovim && \
 dnf install -y libunwind libicu && \
 curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=816869 && \
-mkdir -p /opt/dotnet && sudo tar zxf dotnet.tar.gz -C /opt/dotnet && \
+mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet && \
 ln -s /opt/dotnet/dotnet /usr/local/bin && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
