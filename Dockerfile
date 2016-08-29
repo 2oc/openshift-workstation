@@ -28,7 +28,7 @@ dnf install -y libunwind libicu && \
 curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=816869 && \
 mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet && \
 ln -s /opt/dotnet/dotnet /usr/local/bin && \
-dnf install postgresql-devel postgresql expat-devel bison bison-devel
+dnf install postgresql-devel postgresql expat-devel bison bison-devel && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
