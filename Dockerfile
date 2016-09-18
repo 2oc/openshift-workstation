@@ -31,7 +31,7 @@ ln -s /opt/dotnet/dotnet /usr/local/bin && \
 dnf -y install postgresql-devel postgresql expat-devel bison bison-devel && \
 dnf -y install python2-virtualenv python3-virtualenv && \
 pip2.7 install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
-pip3 install git+git://github.com/powerline/powerline && \
+pip3 install powerline-status && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
