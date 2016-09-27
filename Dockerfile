@@ -32,7 +32,6 @@ dnf -y install postgresql-devel postgresql expat-devel bison bison-devel && \
 dnf -y install python2-virtualenv python3-virtualenv && \
 pip2.7 install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
 pip3 install powerline-status && \
-pip2.7 install paramiko PyYAML Jinja2 httplib2 six ansible apache-libcloud && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
