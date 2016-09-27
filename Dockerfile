@@ -1,7 +1,7 @@
 FROM fedora:24
 
 RUN ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime && \
-dnf -y install vim telnet sl wget xz bzip2 zip tar curl iputils php php-cli php-pear nmap nmap-ncat fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man libtool rsync mosh openssh-clients openssh-server autojump-fish libevent-devel libevent fontforge DBD::Pg && \
+dnf -y install vim telnet sl wget xz bzip2 zip tar curl iputils php php-cli php-pear nmap nmap-ncat fish zsh htop python-pip git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch python-devel automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man libtool rsync mosh openssh-clients openssh-server autojump-fish libevent-devel libevent fontforge && \
 dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install && \
 dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
@@ -32,6 +32,7 @@ dnf -y install postgresql-devel postgresql expat-devel bison bison-devel && \
 dnf -y install python2-virtualenv python3-virtualenv && \
 pip2.7 install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
 pip3 install powerline-status && \
+pip3 install paramiko PyYAML Jinja2 httplib2 six ansible apache-libcloud && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
