@@ -1,33 +1,25 @@
 FROM fedora:24
 
 RUN ln -sf /usr/share/zoneinfo/Europe/Brussels /etc/localtime && \
-dnf -y install vim telnet sl wget xz bzip2 zip tar curl iputils php php-cli php-pear nmap nmap-ncat fish zsh htop python-pip python3-pip python python3 git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man libtool rsync mosh openssh-clients openssh-server autojump-fish libevent-devel libevent fontforge perl-open && \
+dnf -y install vim telnet sl wget xz bzip2 zip tar curl iputils php php-cli php-pear nmap nmap-ncat fish zsh htop python3-pip python-pip python3 python git nc libffi gcc libffi-devel perl-Perl-Critic-More.noarch automake gcc gcc-c++ kernel-devel cmake redhat-rpm-config openssl-devel vim bind-utils glibc-common glibc-langpack-en procps-ng git libjpeg-turbo-devel python-devel python3-devel ncurses-devel fish man-db man libtool rsync mosh openssh-clients openssh-server autojump-fish libevent-devel libevent fontforge perl-open python2-virtualenv python3-virtualenv perl-Locale-Maketext-Simple perl-Locale-Maketext perl-Params-Check perl-Module-Load-Conditional perl-IPC-Cmd perl-ExtUtils-CBuilder perl-Module-Build-Tiny python-paramiko python-gevent python-gevent-websocket python-gevent-socketio python-six python-flask python-setuptools_git python-websocket-client python3-pillow python3-pillow-devel perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker fish htop ecryptfs-utils libunwind libicu postgresql-devel postgresql expat-devel bison bison-devel install rust cargo && \
 dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install && \
-dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
-pip2 install --upgrade pip && \
-pip install butterfly && \
-pip install libsass && \
-dnf -y install python-paramiko python-gevent python-gevent-websocket python-gevent-socketio python-six python-flask python-setuptools_git python-websocket-client python3-pillow python3-pillow-devel && \
+python2 -m pip install --upgrade pip && \
+python3 -m pip install --upgrade pip && \
+python3 -m pip install butterfly && \
+python3 -m pip install libsass && \
 python3 -m pip install gitsome && \
 cpanm Convert::Base32 && \
-dnf install -y vim fish htop ecryptfs-utils && \
 rpm -Uv https://github.com/htacg/tidy-html5/releases/download/5.2.0/tidy-5.2.0-64bit.rpm && \
 ln -s /usr/local/bin/cpanm /usr/bin/cpanm && \
-dnf install -y perl-Locale-Maketext-Simple perl-Locale-Maketext perl-Params-Check perl-Module-Load-Conditional perl-IPC-Cmd perl-ExtUtils-CBuilder perl-Module-Build-Tiny && \
 /usr/local/bin/cpanm App::cpanoutdated && \
 /usr/local/bin/cpanm Time::Stamp && \
 ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
-dnf install -y libunwind libicu && \
 curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=816869 && \
 mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet && \
 ln -s /opt/dotnet/dotnet /usr/local/bin && \
-dnf -y install postgresql-devel postgresql expat-devel bison bison-devel && \
-dnf -y install python2-virtualenv python3-virtualenv && \
-pip2 install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
-pip3 install --upgrade pip && \
-pip3 install powerline-status && \
-dnf -y install rust cargo && \
+python3 -m pip install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
+python3 -m pip install powerline-status && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
