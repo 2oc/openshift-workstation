@@ -27,6 +27,4 @@ cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_te
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
 
-#wsgiref 
-
 ENTRYPOINT ["/bin/bash"]
