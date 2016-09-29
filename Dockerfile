@@ -20,6 +20,7 @@ mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet && \
 ln -s /opt/dotnet/dotnet /usr/local/bin && \
 python3 -m pip install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
 python3 -m pip install powerline-status && \
+dnf -y update && \
 dnf clean all && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
