@@ -6,7 +6,6 @@ dnf search perl-Digest | awk '{ print $1 }' | grep perl | xargs dnf -y install &
 dnf -y install perl-Authen-OATH perl-Data-GUID perl-ExtUtils-Manifest perl-ExtUtils-MakeMaker && \
 wget --no-check-certificate -O - http://cpanmin.us | perl - App::cpanminus && \
 pip2 install --upgrade pip && \
-pip3 install --upgrade pip && \
 pip install butterfly && \
 pip install libsass && \
 dnf -y install python-paramiko python-gevent python-gevent-websocket python-gevent-socketio python-six python-flask python-setuptools_git python-websocket-client python3-pillow python3-pillow-devel && \
@@ -28,6 +27,7 @@ ln -s /opt/dotnet/dotnet /usr/local/bin && \
 dnf -y install postgresql-devel postgresql expat-devel bison bison-devel && \
 dnf -y install python2-virtualenv python3-virtualenv && \
 pip2.7 install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
+pip3 install --upgrade pip && \
 pip3 install powerline-status && \
 dnf -y install rust cargo && \
 dnf clean all && \
