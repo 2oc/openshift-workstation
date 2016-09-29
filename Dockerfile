@@ -18,7 +18,7 @@ ln -s /usr/lib64/libtinfo.so.6 /usr/lib64/libtinfo.so.5 && ldconfig && \
 curl -sSL -o dotnet.tar.gz https://go.microsoft.com/fwlink/?LinkID=816869 && \
 mkdir -p /opt/dotnet && tar zxf dotnet.tar.gz -C /opt/dotnet && \
 ln -s /opt/dotnet/dotnet /usr/local/bin && \
-python3 -m pip install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client wsgiref pygments && \
+python3 -m pip install argparse backports.ssl-match-hostname click prettytable prompt-toolkit requests six slackclient wcwidth websocket-client pygments && \
 python3 -m pip install powerline-status && \
 dnf -y update && \
 dnf clean all && \
@@ -27,5 +27,6 @@ rm -fr /tmp/* && rm -fr /tmp/.??*
 
 #cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
 #cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
+#wsgiref 
 
 ENTRYPOINT ["/bin/bash"]
