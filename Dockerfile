@@ -22,11 +22,11 @@ python3 -m pip install argparse backports.ssl-match-hostname click prettytable p
 python3 -m pip install powerline-status && \
 dnf -y update && \
 dnf clean all && \
+cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
+cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
 rm -fr /var/log/dnf* && \
 rm -fr /tmp/* && rm -fr /tmp/.??*
 
-#cat /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass | grep -v "@extend .underline" > /tmp/_term_styles.sass && \
-#cat /tmp/_term_styles.sass > /usr/lib/python3.5/site-packages/butterfly/sass/_term_styles.sass && \
 #wsgiref 
 
 ENTRYPOINT ["/bin/bash"]
